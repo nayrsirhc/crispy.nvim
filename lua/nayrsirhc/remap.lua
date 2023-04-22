@@ -22,6 +22,9 @@ vim.keymap.set("n", "<A-n>", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>ga", ":Git add %:p<CR>")
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
 
+-- Git push
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
+
 -- UndoTree
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 vim.keymap.set("n", "<leader>uf", ":UndotreeFocus<CR>")
