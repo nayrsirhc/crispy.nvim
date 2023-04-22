@@ -40,10 +40,9 @@ return require('packer').startup(function(use)
     }
   }
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+  use('nvim-tree/nvim-web-devicons')
+
+  use('nvim-lualine/lualine.nvim')
 
   use("NvChad/nvterm")
 
@@ -57,5 +56,7 @@ return require('packer').startup(function(use)
             vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
         end
   }
+
+  use("nvim-tree/nvim-tree.lua")
 
 end)
