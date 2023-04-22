@@ -29,3 +29,7 @@ vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 -- UndoTree
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 vim.keymap.set("n", "<leader>uf", ":UndotreeFocus<CR>")
+
+-- Toggle Mason
+vim.keymap.set("n", "<leader>m", ":Mason<CR>")
+
