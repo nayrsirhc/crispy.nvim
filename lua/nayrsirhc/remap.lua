@@ -16,4 +16,4 @@ vim.keymap.set("n", "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>P", "\"+P")
 
 -- Toggle NvimTree
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<A-n>", ":NvimTreeToggle<CR>")
