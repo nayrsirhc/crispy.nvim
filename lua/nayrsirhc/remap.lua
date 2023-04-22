@@ -33,3 +33,6 @@ vim.keymap.set("n", "<leader>uf", ":UndotreeFocus<CR>")
 -- Toggle Mason
 vim.keymap.set("n", "<leader>m", ":Mason<CR>")
 
+-- Kill Window
+vim.keymap.set("n", "<leader>x", ":x<CR>")
+
