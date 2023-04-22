@@ -125,11 +125,6 @@ _G.packer_plugins = {
     path = "/home/crispy/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-dev-container"] = {
-    loaded = true,
-    path = "/home/crispy/.local/share/nvim/site/pack/packer/start/nvim-dev-container",
-    url = "https://codeberg.org/esensar/nvim-dev-container"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/crispy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
