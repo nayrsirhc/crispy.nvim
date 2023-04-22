@@ -17,3 +17,7 @@ vim.keymap.set("n", "<leader>P", "\"+P")
 
 -- Toggle NvimTree
 vim.keymap.set("n", "<A-n>", ":NvimTreeToggle<CR>")
+
+-- Git add and commit
+vim.keymap.set("n", "<leader>ga", ":Git add %:p<CR>")
+vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
