@@ -36,3 +36,5 @@ vim.keymap.set("n", "<leader>m", ":Mason<CR>")
 -- Kill Window
 vim.keymap.set("n", "<leader>x", ":x<CR>")
 
+-- Run LazySync
+vim.keymap.set("n", "<leader>ls", ":Lazy<CR>")
