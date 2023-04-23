@@ -38,3 +38,6 @@ vim.keymap.set("n", "<leader>x", ":x<CR>")
 
 -- Run LazySync
 vim.keymap.set("n", "<leader>ls", ":Lazy<CR>")
+
+-- Open File Vertical Split
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
