@@ -19,11 +19,11 @@ return require('lazy').setup({
 	  -- or                            , branch = '0.1.x',
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   },
-  
+
   { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
-  
+
   { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
-  
+
   { 'theprimeagen/harpoon' },
 
   {'mbbill/undotree'},
@@ -38,9 +38,7 @@ return require('lazy').setup({
 		  {'neovim/nvim-lspconfig'},             -- Required
 		  {                                      -- Optional
 		  'williamboman/mason.nvim',
-		  cmd = function()
-			  pcall(vim.cmd, 'MasonUpdate')
-		  end,
+		  cmd = 'MasonUpdate'
 	  },
 
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
@@ -71,6 +69,6 @@ return require('lazy').setup({
 
   {"nvim-tree/nvim-tree.lua"},
 
-  {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'}
+  {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 
 })
