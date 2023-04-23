@@ -1,3 +1,3 @@
 require("nayrsirhc.remap")
-require("nayrsirhc.packer")
+require("nayrsirhc.lazy")
 require("nayrsirhc.set")
