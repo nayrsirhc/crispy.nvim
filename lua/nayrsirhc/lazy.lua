@@ -20,7 +20,8 @@ return require('lazy').setup({
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   },
 
-  { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
+  -- { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }, OLD THEME
+  { "catppuccin/nvim", name = "catppuccin" },
 
   { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
 
