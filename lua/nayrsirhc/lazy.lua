@@ -51,6 +51,12 @@ return require('lazy').setup({
     }
   },
 
+  { 'mfussenegger/nvim-dap' },
+
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+
+  { 'folke/neodev.nvim' },
+
   {'nvim-tree/nvim-web-devicons'},
 
   {'nvim-lualine/lualine.nvim'},
