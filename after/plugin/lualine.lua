@@ -1,6 +1,6 @@
 require('lualine').setup{
     options = {
-        theme = "ayu_mirage"
+        theme = "auto",
     },
     sections = {
         lualine_a = {'mode'},
