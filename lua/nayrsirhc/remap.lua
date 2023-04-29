@@ -40,4 +40,7 @@ vim.keymap.set("n", "<leader>x", ":x<CR>")
 vim.keymap.set("n", "<leader>ls", ":Lazy<CR>")
 
 -- Open File Vertical Split
-vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>vs", ":vsplit<CR>")
+
+-- Open FIle Horizontal Split
+vim.keymap.set("n", "<leader>hs", ":split<CR>")
