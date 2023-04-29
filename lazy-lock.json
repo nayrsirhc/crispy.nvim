@@ -1,4 +1,5 @@
 {
+  "Comment.nvim": { "branch": "master", "commit": "38d3b7eb553872d8866f14a0dd4fe84126068fce" },
   "LuaSnip": { "branch": "master", "commit": "e77fa9ad0b1f4fc6cddf54e51047e17e90c7d7ed" },
   "barbar.nvim": { "branch": "master", "commit": "8edf23fe94a2486a8bc74cb64efb9211810f7e83" },
   "catppuccin": { "branch": "main", "commit": "dd176757cc745f71bd54c472a9f58d5f8a54661d" },

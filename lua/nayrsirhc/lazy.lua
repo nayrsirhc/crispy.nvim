@@ -80,4 +80,6 @@ return require('lazy').setup({
 
   { "lukas-reineke/indent-blankline.nvim" },
 
+  { 'numToStr/Comment.nvim' },
+
 })
