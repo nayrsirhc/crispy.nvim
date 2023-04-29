@@ -5,6 +5,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "codeium.vim": { "branch": "main", "commit": "2d49a1050a31fbc5f69a8513ee4f8b6b20ae86ca" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "lazy.nvim": { "branch": "main", "commit": "5d3d5fb31dcf2ef6f1bda58972c5adfcbd8ff944" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "0457b5d7e6a6c1632fdfafc9d5553ef0138e7088" },
   "lualine.nvim": { "branch": "master", "commit": "84ffb80e452d95e2c46fa29a98ea11a240f7843e" },

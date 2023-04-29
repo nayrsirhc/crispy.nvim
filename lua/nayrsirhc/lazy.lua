@@ -78,4 +78,6 @@ return require('lazy').setup({
 
   {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 
+  { "lukas-reineke/indent-blankline.nvim" },
+
 })
