@@ -19,12 +19,12 @@ local settings = {
     },
     filesystem = {
         filtered_items = {
-            hide_dotfiles = false,   
+            hide_dotfiles = false,
         }
     },
     window = {
-        position = "left",
-    },
+        width = 50,
+    }
 }
 
 require("neo-tree").setup(settings)
