@@ -1,4 +1,5 @@
 local settings = {
+    enable_diagnostics = false,
     default_component_configs = {
         modified = {
             symbol = '',
