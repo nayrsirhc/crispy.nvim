@@ -23,6 +23,7 @@ local settings = {
         }
     },
     window = {
+        position = "right",
         width = 50,
     }
 }
