@@ -32,3 +32,4 @@ require("neo-tree").setup(settings)
 
 vim.keymap.set("n", "<A-n>", ":NeoTreeFocusToggle<CR>")
 vim.keymap.set("n", "<C-A-n>", ":NeoTreeFloatToggle<CR>")
+vim.keymap.set("n", "<C-A-g>", ":Neotree focus git_status<CR>")
