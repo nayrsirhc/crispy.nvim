@@ -5,15 +5,15 @@ local settings = {
         },
         git_status = {
             symbols = {
-                modified = '✏️',
-                added = '🌱',
-                deleted = '💀',
-                renamed = '🔖',
-                untracked = '⁉️',
-                ignored = '👻',
-                unstaged = '📦',
-                staged = '✔️',
-                conflict = '🔥',
+                modified = '󰷫',
+                added = '󰹢',
+                deleted = '󰚌',
+                renamed = '󰓺',
+                untracked = '󰝴',
+                ignored = '󰊠',
+                unstaged = '󰘻',
+                staged = '󰘽',
+                conflict = '󰀩',
             }
         },
     },
@@ -21,7 +21,10 @@ local settings = {
         filtered_items = {
             hide_dotfiles = false,   
         }
-    }
+    },
+    window = {
+        position = "left",
+    },
 }
 
 require("neo-tree").setup(settings)
