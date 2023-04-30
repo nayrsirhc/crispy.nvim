@@ -63,3 +63,9 @@ vim.keymap.set('n', '<Leader>dui', function() require('dapui').toggle() end)
 
 -- Custom DAP Icons
 vim.fn.sign_define('DapBreakpoint', {text = '🐞', texthl = '', linehl = '', numhl = ''})
+-- Define custom vim sign for diagnostic warnings
+vim.fn.sign_define('DiagnosticSignError', { text = '🔥', texthl = '', linehl = '', numhl = ''})
+vim.fn.sign_define('DiagnosticSignWarn', { text = '☢️', texthl = '', linehl = '', numhl = ''})
+vim.fn.sign_define('DiagnosticSignInfo', { text = '💡', texthl = '', linehl = '', numhl = ''})
+vim.fn.sign_define('DiagnosticSignHint', { text = '🔎', texthl = '', linehl = '', numhl = ''})
+

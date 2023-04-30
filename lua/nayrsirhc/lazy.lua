@@ -13,58 +13,58 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-return require('lazy').setup({
-  {
-      'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  dependencies = { {'nvim-lua/plenary.nvim'} }
-  },
+local plugins = {
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
 
-  -- { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }, OLD THEME
-  { "catppuccin/nvim", name = "catppuccin" },
+    -- { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }, OLD THEME
+    { "catppuccin/nvim", name = "catppuccin" },
 
-  { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
+    { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
 
-  { 'theprimeagen/harpoon' },
+    { 'theprimeagen/harpoon' },
 
-  {'mbbill/undotree'},
+    {'mbbill/undotree'},
 
-  {'tpope/vim-fugitive'},
+    {'tpope/vim-fugitive'},
 
-  {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  dependencies = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},             -- Required
-		  {                                      -- Optional
-		  'williamboman/mason.nvim',
-		  cmd = 'MasonUpdate'
-	  },
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        dependencies = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+                'williamboman/mason.nvim',
+                cmd = 'MasonUpdate'
+            },
 
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-	  -- Autocompletion
-	  {'hrsh7th/nvim-cmp'},     -- Required
-	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-	  {'L3MON4D3/LuaSnip'},     -- Required
-    }
-  },
+        -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
+    },
 
-  { 'mfussenegger/nvim-dap' },
+    { 'mfussenegger/nvim-dap' },
 
-  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
 
-  { 'folke/neodev.nvim' },
+    { 'folke/neodev.nvim' },
 
-  {'nvim-tree/nvim-web-devicons'},
+    {'nvim-tree/nvim-web-devicons'},
 
-  {'nvim-lualine/lualine.nvim'},
+    {'nvim-lualine/lualine.nvim'},
 
-  {"NvChad/nvterm"},
+    {"NvChad/nvterm"},
 
-  {
-      'Exafunction/codeium.vim',
+    {
+        'Exafunction/codeium.vim',
         config = function ()
             -- Change '<C-g>' here to any keycode you like.
             vim.keymap.set('i', '<C-a>', function () return vim.fn['codeium#Accept']() end, { expr = true })
@@ -72,14 +72,15 @@ return require('lazy').setup({
             vim.keymap.set('i', '<C-b,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
             vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
         end
-  },
+    },
 
-  {"nvim-tree/nvim-tree.lua"},
+    {"nvim-tree/nvim-tree.lua"},
 
-  {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
+    {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 
-  { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim" },
 
-  { 'numToStr/Comment.nvim' },
+    { 'numToStr/Comment.nvim' },
+}
 
-})
+return require('lazy').setup(plugins)
