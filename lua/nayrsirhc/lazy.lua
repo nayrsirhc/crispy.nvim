@@ -98,6 +98,11 @@ local plugins = {
         'miversen33/netman.nvim',
         -- config = true
     },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
 }
 
 return require('lazy').setup(plugins)
