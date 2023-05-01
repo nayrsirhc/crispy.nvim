@@ -3,7 +3,7 @@ local Terminal = require("toggleterm.terminal").Terminal
 -- Docker
 local docker_tui = "lazydocker"
 
-local docker_client = Terminal:new {
+local Docker_client = Terminal:new {
   cmd = docker_tui,
   dir = "git_dir",
   hidden = true,
@@ -13,8 +13,8 @@ local docker_client = Terminal:new {
   },
 }
 
-function _docker_client_toggle()
-  docker_client:toggle()
+function Docker_client_toggle()
+  Docker_client:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _docker_client_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua Docker_client_toggle()<CR>", {noremap = true, silent = true, desc = "Toggle lazydocker ui"})
