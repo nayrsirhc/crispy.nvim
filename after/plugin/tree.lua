@@ -26,7 +26,34 @@ local settings = {
     window = {
         position = "right",
         width = 50,
-    }
+    },
+    sources = {
+            "filesystem",
+            "netman.ui.neo-tree",
+            "git_status",
+            "buffers",
+    },
+    source_selector = {
+        winbar = true,
+        sources = {
+            {
+                source = "filesystem",
+                display_name = "  Files"
+            },
+            {
+                source = "remote",
+                display_name = "󰱔  Remote"
+            },
+            {
+                source = "git_status",
+                display_name = "  Git"
+            },
+            {
+                source = "buffers",
+                display_name = "󰊓  Buffers"
+            },
+        },
+    },
 }
 
 require("neo-tree").setup(settings)

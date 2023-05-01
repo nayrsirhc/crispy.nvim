@@ -92,7 +92,12 @@ local plugins = {
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
         }
-    }
+    },
+
+    {
+        'miversen33/netman.nvim',
+        -- config = true
+    },
 }
 
 return require('lazy').setup(plugins)
