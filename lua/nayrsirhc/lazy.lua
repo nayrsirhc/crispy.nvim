@@ -61,7 +61,7 @@ local plugins = {
 
     {'nvim-lualine/lualine.nvim'},
 
-    {"NvChad/nvterm"},
+    -- {"NvChad/nvterm"}, OLD TERM
 
     {
         'Exafunction/codeium.vim',
@@ -101,7 +101,7 @@ local plugins = {
     {
         'akinsho/toggleterm.nvim',
         version = "*",
-        config = true
+        -- config = true
     },
 }
 
