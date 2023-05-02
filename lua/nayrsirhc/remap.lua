@@ -37,3 +37,4 @@ vim.keymap.set("n", "<leader>vs", ":vsplit<CR>", {desc = "Open File Vertical Spl
 
 -- Open FIle Horizontal Split
 vim.keymap.set("n", "<leader>hs", ":split<CR>", {desc = "Open FIle Horizontal Split"})
+
