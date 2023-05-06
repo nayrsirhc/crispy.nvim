@@ -38,3 +38,5 @@ vim.keymap.set("n", "<leader>vs", ":vsplit<CR>", {desc = "Open File Vertical Spl
 -- Open FIle Horizontal Split
 vim.keymap.set("n", "<leader>hs", ":split<CR>", {desc = "Open FIle Horizontal Split"})
 
+-- Run Current python3 file
+vim.keymap.set("n", "<leader>py", ":!python3 %<CR>", {desc = "Run Current python3 file"})
