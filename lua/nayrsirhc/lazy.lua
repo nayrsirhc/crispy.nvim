@@ -103,6 +103,7 @@ local plugins = {
         version = "*",
         -- config = true
     },
+    'lewis6991/gitsigns.nvim',
 }
 
 return require('lazy').setup(plugins)

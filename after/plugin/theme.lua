@@ -33,12 +33,14 @@ require("catppuccin").setup({
     integrations = {
         barbar = true,
         cmp = true,
+        dap = true,
         gitsigns = true,
         harpoon = true,
         nvimtree = true,
         telescope = true,
         notify = false,
         mini = false,
+        treesitter = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
