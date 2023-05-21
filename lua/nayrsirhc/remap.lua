@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>uf", ":UndotreeFocus<CR>", {desc = "Focus UndoTree"
 vim.keymap.set("n", "<leader>m", ":Mason<CR>", {desc = "Toggle Mason"})
 
 -- Kill Window
-vim.keymap.set("n", "<leader>x", ":x<CR>", {desc = "Kill Window"})
+vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", {desc = "Close Buffer"})
 
 -- Run LazySync
 vim.keymap.set("n", "<leader>ls", ":Lazy<CR>", {desc = "Open LazySync"})

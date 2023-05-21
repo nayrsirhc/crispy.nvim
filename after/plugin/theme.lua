@@ -4,7 +4,7 @@ require("catppuccin").setup({
         light = "latte",
         dark = "mocha",
     },
-    transparent_background = true,
+    transparent_background = false,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
     term_colors = false,
     dim_inactive = {
@@ -31,8 +31,10 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {},
     integrations = {
+        barbar = true,
         cmp = true,
         gitsigns = true,
+        harpoon = true,
         nvimtree = true,
         telescope = true,
         notify = false,
