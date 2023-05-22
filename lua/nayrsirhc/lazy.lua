@@ -104,6 +104,7 @@ local plugins = {
         -- config = true
     },
     'lewis6991/gitsigns.nvim',
+    'j-hui/fidget.nvim',
 }
 
 return require('lazy').setup(plugins)

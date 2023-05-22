@@ -17,4 +17,4 @@ function Docui_client_toggle()
   Docui_client:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>dui", "<cmd>lua Docui_client_toggle()<CR>", {noremap = true, silent = true, desc = "Toggle Docui"})
+vim.api.nvim_set_keymap("n", "<leader>docui", "<cmd>lua Docui_client_toggle()<CR>", {noremap = true, silent = true, desc = "Toggle Docui"})
