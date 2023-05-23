@@ -105,6 +105,7 @@ local plugins = {
     },
     'lewis6991/gitsigns.nvim',
     'j-hui/fidget.nvim',
+    'rcarriga/nvim-notify',
 }
 
 return require('lazy').setup(plugins)
