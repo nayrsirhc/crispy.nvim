@@ -106,6 +106,13 @@ local plugins = {
     'lewis6991/gitsigns.nvim',
     'j-hui/fidget.nvim',
     'rcarriga/nvim-notify',
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.startify'.config)
+        end
+    },
 }
 
 return require('lazy').setup(plugins)

@@ -1,0 +1,11 @@
+{
+    "workspace.library": [
+        "/home/chris/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/usr/share/nvim/runtime/lua",
+        "/home/chris/.local/share/nvim/lazy/nvim-dap-ui/lua",
+        "/usr/share/nvim/runtime/lua",
+        "/home/chris/.config/nvim/lua",
+        "/home/chris/.config/nvim/lua",
+        "/home/chris/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/07c70284"
+    ]
+}
