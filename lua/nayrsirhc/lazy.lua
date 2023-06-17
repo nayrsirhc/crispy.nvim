@@ -104,7 +104,10 @@ local plugins = {
         -- config = true
     },
     'lewis6991/gitsigns.nvim',
-    'j-hui/fidget.nvim',
+    {
+        'j-hui/fidget.nvim',
+        branch = "legacy",
+    },
     'rcarriga/nvim-notify',
     {
         'goolord/alpha-nvim',
