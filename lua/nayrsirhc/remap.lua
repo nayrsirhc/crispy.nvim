@@ -43,3 +43,4 @@ vim.keymap.set("n", "<leader>py", ":!python3 %<CR>", {desc = "Run Current python
 
 -- Run Gitsigns toggle blame line
 vim.keymap.set("n", "<A-b>", ":Gitsigns blame_line<CR>", {desc = "Run Gitsigns toggle blame line"})
+

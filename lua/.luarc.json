@@ -6,6 +6,7 @@
         "/usr/share/nvim/runtime/lua",
         "/home/chris/.config/nvim/lua",
         "/home/chris/.config/nvim/lua",
-        "/home/chris/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/07c70284"
+        "/home/chris/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/07c70284",
+        "/home/chris/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/5b2a186b"
     ]
 }

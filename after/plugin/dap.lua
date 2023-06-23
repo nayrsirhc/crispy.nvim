@@ -97,9 +97,9 @@ vim.fn.sign_define(
 'DiagnosticSignHint',
 {
     text = '󰘥',
-    texthl = 'DiagnosticHint',  
+    texthl = 'DiagnosticHint',
     linehl = '',
     numhl = 'DiagnosticHint'
 })
-  
+
 --

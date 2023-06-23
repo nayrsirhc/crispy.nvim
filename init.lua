@@ -1,5 +1,9 @@
-require('nayrsirhc')
-
+require("nayrsirhc.remap")
+require("nayrsirhc.lazy")
+require("nayrsirhc.set")
+require("nayrsirhc.lazydocker")
+require("nayrsirhc.docui")
+require("nayrsirhc.k9s")
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
