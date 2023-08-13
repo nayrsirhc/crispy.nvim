@@ -122,6 +122,14 @@ local plugins = {
 		    require("auto-save").setup {}
         end,
     },
+    'dag/vim-fish',
+    {
+        "ellisonleao/glow.nvim",
+        config = true,
+        cmd = "Glow"
+    },
+    'sansyrox/vim-python-virtualenv',
+    'towolf/vim-helm',
 }
 
 return require('lazy').setup(plugins)

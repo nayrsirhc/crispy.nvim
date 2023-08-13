@@ -1,8 +1,12 @@
+local lspconfig = require('lspconfig')
 require("neodev").setup({
   library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
 vim.cmd [[ autocmd BufNewFile,BufRead *.bicep set filetype=bicep ]]
+vim.cmd [[ autocmd BufRead,BufNewFile */templates/*.yaml set filetype=helm ]]
+vim.cmd [[ autocmd BufRead,BufNewFile azure-*.y*ml  set filetype=yaml.azure_pipelines ]]
+vim.cmd [[ autocmd BufRead,BufNewFile terraform* set filetype=terraform ]]
 
 local lsp = require('lsp-zero').preset({})
 
@@ -19,10 +23,33 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').bicep.setup{}
-require('lspconfig').yamlls.setup{}
-require('lspconfig').intelephense.setup{
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+lspconfig.bicep.setup{}
+
+lspconfig.yamlls.setup{
+    single_file_support = false,
+	root_dir = function(filename, bufnr)
+		if string.find(filename, "templates/") then
+			return nil
+		end
+        if string.find(filename, "azure-") then
+            return nil
+        end
+		return '.'
+	end
+}
+lspconfig.azure_pipelines_ls.setup{
+    autostart = true,
+    filetypes = {
+        "yaml.azure_pipelines",
+    },
+}
+require'lspconfig'.helm_ls.setup{
+    filetypes = {
+        "helm",
+    }
+}
+lspconfig.intelephense.setup{
     filetypes = { "php" },
     root_dir = function() return vim.loop.cwd() end,
 }
