@@ -6,7 +6,16 @@ require("neodev").setup({
 vim.cmd [[ autocmd BufNewFile,BufRead *.bicep set filetype=bicep ]]
 vim.cmd [[ autocmd BufRead,BufNewFile */templates/*.yaml set filetype=helm ]]
 vim.cmd [[ autocmd BufRead,BufNewFile azure-*.y*ml  set filetype=yaml.azure_pipelines ]]
+vim.cmd [[ autocmd BufRead,BufNewFile *.azuredevops/* set filetype=yaml.azure_pipelines ]]
 vim.cmd [[ autocmd BufRead,BufNewFile terraform* set filetype=terraform ]]
+vim.cmd [[ autocmd BufRead,BufNewFile *enkinsfile* set filetype=groovy ]]
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+vim.cmd([[let g:terraform_fmt_on_save=1]])
+vim.cmd([[let g:terraform_align=1]])
 
 local lsp = require('lsp-zero').preset({})
 
@@ -26,6 +35,8 @@ end)
 -- (Optional) Configure lua language server for neovim
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 lspconfig.bicep.setup{}
+lspconfig.csharp_ls.setup{}
+lspconfig.groovyls.setup{}
 
 lspconfig.yamlls.setup{
     single_file_support = false,
@@ -34,6 +45,9 @@ lspconfig.yamlls.setup{
 			return nil
 		end
         if string.find(filename, "azure-") then
+            return nil
+        end
+        if string.find(filename, ".azuredevops") then
             return nil
         end
 		return '.'

@@ -38,7 +38,7 @@ require("catppuccin").setup({
         harpoon = true,
         neotree = true,
         telescope = true,
-        notify = true,
+        notify = false,
         mini = false,
         treesitter = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
