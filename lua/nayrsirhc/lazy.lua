@@ -130,6 +130,21 @@ local plugins = {
     },
     'sansyrox/vim-python-virtualenv',
     'towolf/vim-helm',
+    'neomake/neomake',
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        config = function ()
+            require("barbecue").setup({
+                theme = "catppuccin",
+            })
+        end,
+    }
 }
 
 return require('lazy').setup(plugins)

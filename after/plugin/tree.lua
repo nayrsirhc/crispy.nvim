@@ -31,7 +31,6 @@ local settings = {
     },
     sources = {
             "filesystem",
-            "netman.ui.neo-tree",
             "git_status",
     },
     source_selector = {
@@ -40,10 +39,6 @@ local settings = {
             {
                 source = "filesystem",
                 display_name = "  Files"
-            },
-            {
-                source = "remote",
-                display_name = "󰱔  Remote"
             },
             {
                 source = "git_status",
