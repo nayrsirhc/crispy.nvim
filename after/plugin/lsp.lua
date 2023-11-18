@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 require("neodev").setup({
-  library = { plugins = { "nvim-dap-ui" }, types = true },
+    library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
 vim.cmd [[ autocmd BufNewFile,BufRead *.bicep set filetype=bicep ]]
@@ -20,38 +20,43 @@ vim.cmd([[let g:terraform_align=1]])
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr, remap = false}
-	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
-	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
-	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    local opts = {buffer = bufnr, remap = false}
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 -- (Optional) Configure lua language server for neovim
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-lspconfig.bicep.setup{}
+lspconfig.bicep.setup{
+    root_dir = function() return vim.loop.cwd() end
+}
 lspconfig.csharp_ls.setup{}
 lspconfig.groovyls.setup{}
+lspconfig.rust_analyzer.setup{
+    root_dir = function() return '.' end,
+}
 
 lspconfig.yamlls.setup{
     single_file_support = false,
-	root_dir = function(filename, bufnr)
-		if string.find(filename, "templates/") then
-			return nil
-		end
+    root_dir = function(filename, bufnr)
+        if string.find(filename, "templates/") then
+            return nil
+        end
         if string.find(filename, "azure-") then
             return nil
         end
         if string.find(filename, ".azuredevops") then
             return nil
         end
-		return '.'
-	end
+        return '.'
+    end
 }
 lspconfig.azure_pipelines_ls.setup{
     autostart = true,
@@ -74,16 +79,36 @@ lsp.setup{}
 local cmp = require('cmp')
 local cmp_select = {behaviour = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.close(),
 })
-
+local cmp_sources = {
+    { name = 'path' },                              -- file paths
+    { name = 'nvim_lsp', keyword_length = 3 },      -- from language server
+    { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
+    { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
+    { name = 'buffer', keyword_length = 2 },        -- source current buffer
+    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
+    { name = 'calc'},                               -- source for math calculation
+}
+local cmp_snippet = {
+    expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+    end,
+}
 lsp.set_preferences({
-	sign_icons = { }
+    sign_icons = { }
 })
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
+    mapping = cmp_mappings,
+    sources = cmp_sources,
+    snippet = cmp_snippet,
 })

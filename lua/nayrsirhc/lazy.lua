@@ -51,6 +51,13 @@ local plugins = {
         }
     },
 
+    { 'hrsh7th/cmp-nvim-lua' },
+    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    { 'hrsh7th/cmp-vsnip' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-buffer'},
+    { 'hrsh7th/vim-vsnip' },
+
     { 'mfussenegger/nvim-dap' },
 
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
@@ -160,11 +167,12 @@ local plugins = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
             -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
+            --   `nvim-notify` is only needed, if you want to { the notification view.},
+            --   If not available, we { `mini` as the fallback},
             "rcarriga/nvim-notify",
         }
     },
+    'mhartington/formatter.nvim',
 }
 
 return require('lazy').setup(plugins)
