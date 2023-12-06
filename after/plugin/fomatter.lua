@@ -9,9 +9,20 @@ require("formatter").setup({
 	log_level = vim.log.levels.WARN,
 	-- All formatter configurations are opt-in
 	filetype = {
-        go = {
-            require("formatter.filetypes.go").gofmt
-        },
+		cs = {
+			function()
+				return {
+					exe = "dotnet",
+					args = {
+						"format",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		go = {
+			require("formatter.filetypes.go").gofmt,
+		},
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
 		lua = {
@@ -34,9 +45,9 @@ require("formatter").setup({
 			end,
 		},
 
-        typescript = {
-            require("formatter.filetypes.typescript").prettier
-        },
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype

@@ -40,3 +40,6 @@ vim.keymap.set("n", "<leader>hs", ":split<CR>", {desc = "Open FIle Horizontal Sp
 
 -- Run Gitsigns toggle blame line
 vim.keymap.set("n", "<A-b>", ":Gitsigns blame_line<CR>", {desc = "Run Gitsigns toggle blame line"})
+
+-- Terraform fmt
+vim.keymap.set("n", "<leader>tf", ":!terraform fmt %<CR>", {desc = "Terraform fmt"})
