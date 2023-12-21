@@ -1,6 +1,0 @@
--- require("nayrsirhc.remap")
--- require("nayrsirhc.lazy")
--- require("nayrsirhc.set")
--- require("nayrsirhc.lazydocker")
--- require("nayrsirhc.docui")
--- require("nayrsirhc.k9s")
